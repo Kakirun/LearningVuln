@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Learning Vuln</title>
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="../css/styles.css"/>
+        <link rel="stylesheet" href="../css/my-sheet.css">
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+        />
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="home.php">Learning Vuln</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    メニュー
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.php">注意事項</a></li>
+                        <li class="nav-item"><a class="nav-link" href="intro.php">はじめに</a></li>
+                        <li class="nav-item"><a class="nav-link" href="learnmenu.php">学習パート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hackpage_intro.php">攻撃パート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="summary.php">まとめ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead ">
+            <div class="container">
+                <h1>はじめに</h1>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section">
+            <div class="container">
+                <div class="text-center">
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="section-heading text-bg-info mb-4">　</h2>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-8">
+                        <div class="text-center">
+                            <h4>このコンテンツ（Learning Vuln）の目的</h4>
+                            <p class="text-start">
+                                　最初の注意事項に記載したとおり、このコンテンツではWebアプリケーションに潜む脆弱性について学習していきます。<br>
+                                　同様の内容を取り扱ったコンテンツは他にもいくつか存在しますが、それらのコンテンツは開発者（プログラマー）を対象としたものとなっています。
+                                しかし、このコンテンツは開発者だけを対象としていません。Webアプリケーションに触れる全ての人を対象としています。<br>
+                                　そのため、基本的な用語や仕組みからかみ砕いて説明して、これまで脆弱性という言葉を聞いたことのなかった人にもわかりやすく伝わるように工夫しました。<br>
+                                　余談にはなりますが、コンテンツの名前に含まれる「Vuln」はVulnerability（脆弱性）の略です。<br>
+                                　このコンテンツを通じて脆弱性について学び、その重要性を理解していただければ幸いです。<br>
+                            </p>
+
+                            <h4>代表的な用語の解説</h4>
+                            <p class="text-start">
+                                　以下に、このコンテンツで頻繁に登場する用語の解説を記載します。<br>
+                                <br>
+                                ・<b>Webアプリケーション</b><br>
+                                　Webサイトは情報提供が主で、閲覧や検索など基本的な操作しかできないものに対して、ログインや入力・編集・保存などより高度な操作ができるものをWebアプリケーションと言います。<br>
+                                ・<b>脆弱性</b><br>
+                                　Webアプリケーションに潜む、攻撃者によって悪用される可能性のある弱点のことです。<br>
+                                ・<b>攻撃</b><br>
+                                　脆弱性を悪用して、Webアプリケーションに対して不正な操作や侵入を行うことです。<br>
+                                ・<b>ペネトレーションテスト</b><br>
+                                　Webアプリケーションに対して、悪人が行うと想定される攻撃を実際に行い、不正に侵入などができないか確認するテストのことです。<br>
+                            </p>
+
+                            <h4>脆弱性を学習する必要性</h4>
+                            <p class="text-start">
+                                　IPA（独立行政法人情報処理推進機構）の調査・集計を見ても、企業に対して脆弱性を利用したサイバー攻撃が絶えることはありません。
+                                以下に挙げるのは、過去に発生した攻撃事例の一部です。（攻撃内容の解説は、学習パートで行います。）<br>
+                                <br>
+                                　・「サイボウズ ガルーン」におけるSQLインジェクションの脆弱性<br>
+                                　　　https://jvndb.jvn.jp/jvndb/JVNDB-2014-000024<br>
+                                　・シンクグラフィカ製「ダウンロードログ CGI」におけるディレクトリ・トラバーサルの脆弱性<br>
+                                　　　https://jvndb.jvn.jp/jvndb/JVNDB-2015-000006<br>
+                                　※出典:「IPA 安全なウェブサイトの作り方 改訂第7版」, 独立行政法人情報処理推進機構 (2021年3月)<br>
+                                <br>
+                                これら攻撃や被害の事実を踏まえながら、現在でも企業におけるセキュリティ対策を進めるうえでの問題点として、従業員らの意識が低いこと、知識を持った従業員が少ないことが調査からわかっています。<br>
+                            </p>
+                            <figure class="figure">
+                                <img src="../assets/img/image/IPA_グラフ1.png" alt="IPAによる資料" style="width: 100%; max-width: 90%;" class="img-thumbnail">
+                                <figcaption class="figure-caption">図1　企業が情報セキュリティ対策を進めるうえでの問題点の調査グラフ<br>出典:「2023年度 SECURITY ACTION宣言事業者における情報セキュリティ対策の実態調査」, <br>独立行政法人情報処理推進機構 (2024年3月)</figcaption>
+                            </figure>
+                            <p class="text-start">
+                                　おそらく、脆弱性がなぜ危険であるか、どのような被害を及ぼし得るかを企業内の人物が知っていればセキュリティ対策が素早く実施されるでしょう。<br>
+                                　しかし現在は従業員や経営者がそもそも脆弱性というものを認知していないため、セキュリティ対策の必要性を本質的に理解できず攻撃被害が拡大していると私は考えます。セキュリティに投資するよりも、Webアプリケーションに新機能を追加した方が利益を得られて、利用者の満足度は上昇することでしょう。<br>
+                                　もしセキュリティ対策を疎かにする状況が続けば、いつかは攻撃者による被害を受けることになります。そのためセキュリティの専門家だけでなく、Webアプリケーションの利用に関わる人は脆弱性について学び、その重要性を理解することが必要です。<br>
+                                　Learning Vulnを用いて、学生のうちから脆弱性について理解しておくことで、今後生活や仕事の中で知識が役立つときが必ずあると考えています。<br>
+                                <br>
+                                　またメディア情報学科での授業を通して、Webアプリケーションやその他のデジタルコンテンツの開発を学ぶ機会は多くありましたが、脆弱性について詳しく学習する機会は授業1回分（3年次後学期の"Webアプリケーション"で実施）しかありませんでした。コンテンツを制作する側になっていく学生たちこそ、自分の作成したものから被害が拡大しないように脆弱性について理解すべきだとも考えています。<br>
+                            </p>
+
+                            <h4>ペネトレーションテストの説明とこのコンテンツでの目的</h4>
+                            <p class="text-start">
+                                　ペネトレーションテストとは、Webアプリケーションのシステムに対して悪人が行うと想定される攻撃を実際に行い、不正に侵入などができないか確認するテストのことです。<br>
+                                　このコンテンツではペネトレーションテストを行う立場になり、Webアプリケーションに潜む脆弱性を見つけ出してその脆弱性を悪用した攻撃を行うことで、脆弱性の危険性を理解してもらうことも目的となります。<br>
+                                　文章を読む受動的な学習だけでなく、実際に攻撃を試してみることで脆弱性についてより理解することができると考えています。<br>
+                                　もちろん、脆弱性を見つけ出すだけでなく、その脆弱性を防ぐための対策を学ぶことも重要です。そのため、攻撃を行うときには必ずその脆弱性を防ぐための対策も合わせて学習してください。<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <br>
+                        <a href="home.php" class="btn btn-primary btn-xl mb-3" style="width: 300px;">ホームメニューに戻る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-lg-center">Copyright &copy; KakidaToranosuke</div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

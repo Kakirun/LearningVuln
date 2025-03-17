@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Learning Vuln</title>
+
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="../css/styles.css"/>
+        <link rel="stylesheet" href="../css/my-sheet.css">
+
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap"
+        />
+
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="home.php">Learning Vuln</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    メニュー
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.php">注意事項</a></li>
+                        <li class="nav-item"><a class="nav-link" href="intro.php">はじめに</a></li>
+                        <li class="nav-item"><a class="nav-link" href="learnmenu.php">学習パート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hackpage_intro.php">攻撃パート</a></li>
+                        <li class="nav-item"><a class="nav-link" href="summary.php">まとめ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead ">
+            <div class="container">
+                <h1>SQLインジェクションを学ぶ</h1>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section">
+            <div class="container">
+                <div class="text-center">
+                    <div class="col-md-8 mx-auto">
+                        <h2 class="section-heading text-bg-info mb-4">　</h2>
+                    </div>
+                </div>
+                <div class="row text-center justify-content-center">
+                    <div class="col-md-8">
+                        <div class="text-center">
+                            <h4>関連用語の解説</h4>
+                            <p class="text-start ">
+                                　以下に、SQLインジェクションに関連する用語の解説を記載します。<br>
+                                <br>
+                                ・<b>データベース</b><br>
+                                　Webアプリケーションに関するデータが集められている「入れ物」のことです。<br>
+                                　例えば、ECサイト（商品を購入するサイト）であればログインするために「ユーザー名」と「パスワード」を入力することが多いですね。
+                                このとき、そのECサイトのデータベースではECサイトに登録されている全てのユーザー名とパスワードが保存されていることになります。
+                                また、新しくユーザー登録が行われたときは、データベースに新しくユーザー名とパスワードが保存されるようになっています。<br>
+                                　もちろんユーザーに関する情報以外にも、各Webアプリケーションに必要な情報が保存されています。<br>
+                                ・<b>SQL（SQL文）</b><br>
+                                　データベースとやり取りするときに使う言葉を「SQL」と言い、SQLを用いて書かれたデータベースに対する文章を「SQL文」と言います。（SQL文は「クエリ」「SQLクエリ」とも表現されます。）<br>
+                                ・<b>インジェクション</b><br>
+                                　インジェクション（injection）は英語で「注入」や「注射」の意味を持ちます。<br>
+                            </p>
+                            <br>
+                            <h4>想定される被害</h4>
+                            <p class="text-start">
+                                ・<b>データベースに蓄積された非公開情報の閲覧</b><br>
+                                　個人情報（各ユーザーのパスワードなど）の漏えい　等<br>
+                                ・<b>データベースに蓄積された情報の改ざん、消去</b><br>
+                                　Webページの改ざん、ユーザーや管理者のパスワード変更、システム停止 等<br>
+                                ・<b>漏えいした情報による不正ログイン</b><br>
+                                　ログイン後に利用できる操作を不正に行われる<br>
+                                ・<b>SQL文を利用したシステムの乗っ取り、他への攻撃の踏み台としての悪用</b><br>
+                            </p>
+                            <br>
+                            <h4>まとめると…</h4>
+                            <p class="text-start">
+                                　SQLインジェクションを実行されると、Webアプリケーションがデータベースに保存している情報（ユーザーの個人情報やシステム上の秘密）を悪用される可能性がある！<br>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <br>
+                        <a href="learnmenu.php" class="btn btn-primary btn-xl mb-3 mx-lg-3" style="width: 300px;">学習パート画面に戻る</a>
+                        <a href="sqlin_hack.php" class="btn btn-info btn-xl mb-3 mx-lg-3" style="width: 300px;">攻撃を行ってみる</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 text-lg-center">Copyright &copy; KakidaToranosuke</div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
